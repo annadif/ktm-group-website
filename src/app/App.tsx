@@ -20,6 +20,9 @@ import {
   Target,
   Zap,
   CheckCircle2,
+  MapPin,
+  Mail,
+  Clock,
 } from "lucide-react";
 import {
   motion,
@@ -29,14 +32,8 @@ import {
 } from "motion/react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import HeroCarousel from "@/app/components/HeroCarousel";
-import ResourcesCarousel from "@/app/components/ResourcesCarousel";
 import logoImage from "@/assets/1b6de91575602d267fe6362ec65edefd64586b44.png";
 import aboutImage from "@/assets/23ef2151733bc2fd69d57a28823d76425a42cc68.png";
-import goldBarsImage from "@/assets/ef85496b9022eb1930feee88cce87235f337e714.png";
-import gravelImage from "@/assets/aaab7ab8922dea9846f7ead21c59d7cb820be8d3.png";
-import goldNuggetsImage from "@/assets/6ee0755d729d91f961363bff7b7186f92ce14e13.png";
-import mineralsImage from "@/assets/d2dfa393d601a6814e36038cb253af1e871df5a6.png";
-import gravierImage from "@/assets/img/gravier.jpeg";
 import explorationImage from "@/assets/img/exploration.jpg";
 import exploitationImage from "@/assets/img/exploitation.webp";
 import traitementImage from "@/assets/img/traitement.jpg";
@@ -82,9 +79,9 @@ const ParticleBackground = ({
 
 export default function App() {
   const companyName = "KTM GROUP";
-  const primaryColor = "#F59E0B";
+  const primaryColor = "#4B5563";
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const secondaryColor = "#111827";
+  const secondaryColor = "#374151";
   const accentColor = "#3B82F6";
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const particlesEnabled = true;
@@ -148,57 +145,6 @@ export default function App() {
     setIsMenuOpen(false);
   };
 
-  const resourcesCarouselItems = [
-    {
-      id: 1,
-      image: goldBarsImage,
-      title: "Or Raffiné",
-      description:
-        "Production et commercialisation d'or raffiné de haute qualité selon les standards internationaux.",
-    },
-    {
-      id: 2,
-      image: gravelImage,
-      title: "Gravier & Agrégats",
-      description:
-        "Extraction et traitement de gravier et matériaux de construction pour les projets d'infrastructure.",
-    },
-    {
-      id: 3,
-      image: goldNuggetsImage,
-      title: "Pépites d'Or",
-      description:
-        "Découverte et extraction de pépites d'or naturelles dans nos sites d'exploitation.",
-    },
-    {
-      id: 4,
-      image: mineralsImage,
-      title: "Minerais Précieux",
-      description:
-        "Exploitation de minerais précieux et métaux rares pour l'industrie mondiale.",
-    },
-    {
-      id: 5,
-      image: gravierImage,
-      title: "Ressources granulaires",
-      description:
-        "Extraction et traitement de ressources granulaires pour diverses applications industrielles.",
-    },
-    {
-      id : 6,
-      image: explorationImage,
-      title: "exploration minière",
-      description:
-        "Identification et évaluation des gisements minéraux avec des technologies de pointe et une expertise géologique approfondie.",
-    },
-    {
-      id : 7,
-      image: exploitationImage,
-      title: "exploitation minière",
-      description: "Extraction efficace et durable des ressources minérales avec des équipements de dernière génération.",
-    },
-  ];
-
   const services = [
     {
       id: 1,
@@ -207,8 +153,8 @@ export default function App() {
         "Identification et évaluation des gisements minéraux avec des technologies de pointe et une expertise géologique approfondie.",
       icon: <Layers size={32} />,
       image: explorationImage,
-      color: "#F59E0B",
-      gradient: "from-amber-500 to-orange-500",
+      color: "#4B5563",
+      gradient: "from-blue-500 to-blue-600",
     },
     {
       id: 2,
@@ -316,7 +262,7 @@ export default function App() {
         "Une équipe d'experts qualifiés et des processus optimisés pour garantir les plus hauts standards de qualité.",
       icon: <Award size={32} />,
       color: primaryColor,
-      gradient: "from-amber-500 to-orange-500",
+      gradient: "from-blue-500 to-blue-600",
     },
     {
       id: 2,
@@ -428,7 +374,7 @@ export default function App() {
           onClick={() =>
             window.scrollTo({ top: 0, behavior: "smooth" })
           }
-          className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-2xl shadow-amber-500/50 hover:shadow-amber-500/70 transition-all"
+          className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center shadow-2xl shadow-blue-500/50 hover:shadow-blue-500/70 transition-all"
           initial={{ opacity: 0, y: 20 }}
           animate={{
             opacity: scrollY > 300 ? 1 : 0,
@@ -489,8 +435,8 @@ export default function App() {
                   onClick={() => scrollToSection(item)}
                   className={`px-5 py-2.5 font-semibold rounded-xl transition-all duration-300 capitalize relative group ${
                     activeSection === item
-                      ? `text-white bg-gradient-to-r from-amber-500 to-orange-600 shadow-lg shadow-amber-500/30`
-                      : "text-gray-700 hover:text-amber-600 hover:bg-amber-50"
+                      ? `text-white bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg shadow-blue-500/30`
+                      : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -507,7 +453,7 @@ export default function App() {
                 </motion.button>
               ))}
               <motion.button
-                className="px-6 py-2.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-700 transition-all duration-300 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50"
+                className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection("contact")}
@@ -555,7 +501,7 @@ export default function App() {
                       onClick={() => scrollToSection(item)}
                       className={`py-3 px-5 font-semibold rounded-xl transition-all duration-200 capitalize text-left ${
                         activeSection === item
-                          ? `text-white bg-gradient-to-r from-amber-500 to-orange-600`
+                          ? `text-white bg-gradient-to-r from-blue-500 to-blue-600`
                           : "text-gray-700 hover:bg-gray-100"
                       }`}
                       whileTap={{ scale: 0.97 }}
@@ -572,7 +518,7 @@ export default function App() {
                     </motion.button>
                   ))}
                   <motion.button
-                    className="mt-2 py-3 px-5 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold rounded-xl transition-all duration-200 text-center shadow-lg"
+                    className="mt-2 py-3 px-5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl transition-all duration-200 text-center shadow-lg"
                     whileTap={{ scale: 0.97 }}
                     onClick={() => scrollToSection("contact")}
                   >
@@ -600,13 +546,13 @@ export default function App() {
         <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
           <div className="max-w-4xl">
             <motion.div
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-600/20 backdrop-blur-sm px-3 sm:px-5 py-1.5 sm:py-2 border border-amber-500/30 mb-6 sm:mb-8"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-600/20 backdrop-blur-sm px-3 sm:px-5 py-1.5 sm:py-2 border border-blue-500/30 mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
-              <span className="text-amber-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              <span className="text-blue-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
                 Leader de l'Exploitation Minière au Tchad
               </span>
             </motion.div>
@@ -620,7 +566,7 @@ export default function App() {
               <span className="block text-white drop-shadow-2xl">
                 L'Avenir de
               </span>
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 drop-shadow-lg mt-1 sm:mt-2">
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 drop-shadow-lg mt-1 sm:mt-2">
                 l'Industrie Minière
               </span>
             </motion.h1>
@@ -646,7 +592,7 @@ export default function App() {
             >
               <motion.button
                 onClick={() => scrollToSection("services")}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white text-sm sm:text-base font-bold rounded-2xl transition-all duration-300 flex items-center justify-center group shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 border border-amber-400/20"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm sm:text-base font-bold rounded-2xl transition-all duration-300 flex items-center justify-center group shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 border border-blue-400/20"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -663,7 +609,7 @@ export default function App() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-amber-500 transition-colors border border-white/30">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-blue-500 transition-colors border border-white/30">
                   <Play
                     size={14}
                     className="text-white ml-0.5"
@@ -745,15 +691,15 @@ export default function App() {
               onClick={(e) => e.stopPropagation()}
             >
               <motion.button
-                className="absolute -top-12 right-0 text-white p-2 hover:text-amber-400 transition-colors"
+                className="absolute -top-12 right-0 text-white p-2 hover:text-blue-400 transition-colors"
                 onClick={() => setVideoModalOpen(false)}
                 whileHover={{ scale: 1.1, rotate: 90 }}
               >
                 <X size={32} />
               </motion.button>
-              <div className="bg-gradient-to-br from-gray-900 to-black w-full h-full rounded-3xl flex items-center justify-center border border-amber-500/20">
+              <div className="bg-gradient-to-br from-gray-900 to-black w-full h-full rounded-3xl flex items-center justify-center border border-blue-500/20">
                 <div className="text-center">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-amber-500/50">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-blue-500/50">
                     <Play
                       size={32}
                       className="text-white ml-1"
@@ -772,97 +718,6 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Resources Carousel Section */}
-      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDE2YzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnptLTE4IDBjMCAxLjEtLjkgMi0yIDJzLTItLjktMi0yIC45LTIgMi0yIDIgLjkgMiAyem0zNiAwYzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
-
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <motion.div
-            className="text-center mb-12 sm:mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border border-amber-500/30 mb-4 sm:mb-6">
-              <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
-              <span className="text-amber-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                Nos Ressources
-              </span>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 leading-tight">
-              <span className="text-white">Ressources </span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600">
-                Minières
-              </span>
-            </h2>
-
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-              Découvrez notre gamme complète de ressources
-              minières extraites et traitées avec expertise
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <ResourcesCarousel items={resourcesCarouselItems} />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Value Props Section - Modern Cards */}
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PHBhdGggZD0iTTM2IDE2YzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnptLTE4IDBjMCAxLjEtLjkgMi0yIDJzLTItLjktMi0yIC45LTIgMi0yIDIgLjkgMiAyem0zNiAwYzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {valueProps.map((prop, index) => (
-              <motion.div
-                key={prop.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
-                viewport={{ once: true, margin: "-100px" }}
-                whileHover={{ y: -10 }}
-                className="relative group"
-              >
-                <div className="bg-white rounded-3xl p-8 shadow-lg shadow-gray-200/50 border border-gray-100 hover:shadow-2xl hover:shadow-gray-300/50 transition-all duration-500 h-full">
-                  {/* Gradient Border on Hover */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-r ${prop.gradient} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl`}
-                  ></div>
-
-                  <motion.div
-                    className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden bg-gradient-to-br ${prop.gradient} shadow-lg`}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                  >
-                    <div className="text-white relative z-10">
-                      {prop.icon}
-                    </div>
-                  </motion.div>
-
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-amber-600 group-hover:to-orange-600 transition-all duration-300">
-                    {prop.title}
-                  </h3>
-
-                  <p className="text-gray-600 leading-relaxed">
-                    {prop.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* About Section - Modern Layout */}
       <section
@@ -899,7 +754,7 @@ export default function App() {
 
                 {/* Floating Badge */}
                 <motion.div
-                  className="absolute -bottom-4 sm:-bottom-8 -right-4 sm:-right-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl shadow-amber-500/50 border-2 sm:border-4 border-white"
+                  className="absolute -bottom-4 sm:-bottom-8 -right-4 sm:-right-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl shadow-blue-500/50 border-2 sm:border-4 border-white"
                   whileHover={{ scale: 1.05, rotate: 5 }}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -914,7 +769,7 @@ export default function App() {
                       <div className="text-white font-black text-base sm:text-xl">
                         ISO 9001
                       </div>
-                      <div className="text-amber-100 text-xs sm:text-sm">
+                      <div className="text-blue-100 text-xs sm:text-sm">
                         Certifié 2015
                       </div>
                     </div>
@@ -929,73 +784,32 @@ export default function App() {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 bg-amber-100 px-4 py-2 rounded-full mb-6">
-                <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
-                <span className="text-amber-700 font-bold text-sm uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full mb-6">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span className="text-blue-700 font-bold text-sm uppercase tracking-wider">
                   À Propos de Nous
                 </span>
               </div>
 
               <h2 className="text-5xl font-black mb-8 text-gray-900 leading-tight">
                 Leader du Secteur <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-700">
                   Minier au Tchad
                 </span>
               </h2>
 
-              <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-                <strong className="text-amber-600">
+              <p className="text-gray-700 mb-8 text-lg leading-relaxed">
+                <strong className="text-blue-600">
                   {companyName}
                 </strong>{" "}
                 est une entreprise pionnière dans le secteur
                 minier au Tchad, spécialisée dans l'exploration,
                 l'exploitation et le traitement des ressources
-                minérales. Nous combinons technologie de pointe
-                et expertise humaine pour des opérations
-                efficaces et durables.
+                minérales avec excellence et durabilité.
               </p>
 
-              <div className="grid grid-cols-1 gap-4 mb-8">
-                {[
-                  {
-                    icon: <Target size={20} />,
-                    title: "Notre Mission",
-                    text: "Développer les ressources minières de manière responsable et durable",
-                  },
-                  {
-                    icon: <Zap size={20} />,
-                    title: "Notre Vision",
-                    text: "Être le leader africain de l'innovation minière",
-                  },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start gap-4 p-4 rounded-2xl bg-gradient-to-r from-gray-50 to-amber-50 border border-amber-100"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: 0.2 + index * 0.1,
-                    }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white flex-shrink-0 shadow-lg">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 mb-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-gray-600 text-sm">
-                        {item.text}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
               <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 text-white font-bold rounded-2xl transition-all duration-300 flex items-center shadow-xl group"
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold rounded-2xl transition-all duration-300 flex items-center shadow-xl group"
                 whileHover={{ scale: 1.05, x: 5 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => scrollToSection("services")}
@@ -1007,82 +821,6 @@ export default function App() {
                 />
               </motion.button>
             </motion.div>
-          </div>
-
-          {/* Timeline - Modern Design */}
-          <div className="mt-32">
-            <div className="text-center mb-16">
-              <motion.div
-                className="inline-flex items-center gap-2 bg-amber-100 px-4 py-2 rounded-full mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
-                <span className="text-amber-700 font-bold text-sm uppercase tracking-wider">
-                  Notre Parcours
-                </span>
-              </motion.div>
-
-              <motion.h2
-                className="text-5xl font-black text-gray-900 mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                15 Ans d'
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
-                  Excellence
-                </span>
-              </motion.h2>
-            </div>
-
-            <div className="relative max-w-5xl mx-auto">
-              {/* Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-500 via-orange-500 to-amber-600 hidden md:block"></div>
-
-              {/* Timeline Events */}
-              <div className="relative z-10 space-y-12">
-                {timeline.map((event, index) => (
-                  <motion.div
-                    key={index}
-                    className={`flex items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.1,
-                    }}
-                    viewport={{ once: true, margin: "-100px" }}
-                  >
-                    <div
-                      className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}
-                    >
-                      <div className="bg-white rounded-2xl p-6 shadow-lg shadow-gray-200/50 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white px-4 py-1.5 rounded-full mb-3 text-sm font-bold">
-                          {event.icon}
-                          <span>{event.year}</span>
-                        </div>
-                        <h3 className="text-xl font-bold mb-2 text-gray-900">
-                          {event.title}
-                        </h3>
-                        <p className="text-gray-600">
-                          {event.description}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center z-20 shadow-2xl shadow-amber-500/50 border-4 border-white flex-shrink-0">
-                      <div className="w-6 h-6 bg-white rounded-full"></div>
-                    </div>
-
-                    <div className="flex-1 hidden md:block"></div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -1099,14 +837,14 @@ export default function App() {
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-10 sm:mb-16">
             <motion.div
-              className="inline-flex items-center gap-2 bg-amber-100 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6"
+              className="inline-flex items-center gap-2 bg-blue-100 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-              <span className="text-amber-700 font-bold text-xs sm:text-sm uppercase tracking-wider">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-wider">
                 Nos Services
               </span>
             </motion.div>
@@ -1119,7 +857,7 @@ export default function App() {
               viewport={{ once: true }}
             >
               Solutions{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-700">
                 360°
               </span>
             </motion.h2>
@@ -1201,152 +939,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Projects Section - Modern Showcase */}
-      <section
-        ref={(el) => {
-          if (el) sectionsRef.current.projects = el;
-        }}
-        className="py-32 bg-white relative overflow-hidden"
-      >
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-            <div>
-              <motion.div
-                className="inline-flex items-center gap-2 bg-amber-100 px-4 py-2 rounded-full mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-                <span className="text-amber-700 font-bold text-sm uppercase tracking-wider">
-                  Nos Réalisations
-                </span>
-              </motion.div>
-
-              <motion.h2
-                className="text-5xl md:text-6xl font-black text-gray-900 mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                Projets{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
-                  d'Envergure
-                </span>
-              </motion.h2>
-
-              <motion.p
-                className="text-gray-600 max-w-2xl text-lg"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                Découvrez nos projets phares et notre impact
-                dans le secteur minier.
-              </motion.p>
-            </div>
-
-            <motion.button
-              className="px-6 py-3 border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white font-bold rounded-2xl transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-amber-500/30"
-              whileHover={{ scale: 1.05, x: 5 }}
-              whileTap={{ scale: 0.97 }}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              Tous les Projets
-              <ArrowRight size={18} />
-            </motion.button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                className="group relative"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1 + 0.3,
-                }}
-                viewport={{ once: true, margin: "-100px" }}
-                whileHover={{ y: -10 }}
-              >
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl aspect-[4/5]">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
-
-                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                    <div className="flex justify-between items-start gap-2">
-                      <span className="bg-gradient-to-r from-amber-500 to-orange-600 text-white text-sm font-bold py-2 px-4 rounded-full shadow-lg">
-                        {project.category}
-                      </span>
-                      <span className="bg-white/20 backdrop-blur-xl text-white text-sm py-2 px-4 rounded-full border border-white/30">
-                        {project.year}
-                      </span>
-                    </div>
-
-                    <div>
-                      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-300 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-5 group-hover:translate-y-0">
-                        {project.description}
-                      </p>
-
-                      {/* Project Stats */}
-                      <div className="grid grid-cols-3 gap-4 mb-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-5 group-hover:translate-y-0 delay-100">
-                        <div className="bg-white/10 backdrop-blur-xl rounded-xl p-3 border border-white/20">
-                          <div className="text-amber-400 font-bold text-lg">
-                            ${project.stats.investment}
-                          </div>
-                          <div className="text-white text-xs">
-                            Investissement
-                          </div>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-xl rounded-xl p-3 border border-white/20">
-                          <div className="text-amber-400 font-bold text-lg">
-                            {project.stats.jobs}
-                          </div>
-                          <div className="text-white text-xs">
-                            Emplois
-                          </div>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-xl rounded-xl p-3 border border-white/20">
-                          <div className="text-amber-400 font-bold text-lg">
-                            {project.stats.production}
-                          </div>
-                          <div className="text-white text-xs">
-                            Production
-                          </div>
-                        </div>
-                      </div>
-
-                      <motion.button
-                        className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold rounded-2xl shadow-2xl shadow-amber-500/50 hover:shadow-amber-500/70 transition-all"
-                        whileHover={{ x: 5 }}
-                      >
-                        Voir le Projet
-                        <ArrowRight size={16} />
-                      </motion.button>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section - Modern Gradient */}
       <section className="py-16 sm:py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6">
@@ -1361,7 +953,7 @@ export default function App() {
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDE2YzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnptLTE4IDBjMCAxLjEtLjkgMi0yIDJzLTItLjktMi0yIC45LTIgMi0yIDIgLjkgMiAyem0zNiAwYzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
 
             {/* Gradient Orbs */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-amber-500/30 to-orange-600/30 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-blue-600/30 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full blur-3xl"></div>
 
             <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-12">
@@ -1375,7 +967,7 @@ export default function App() {
                 >
                   <CheckCircle2
                     size={16}
-                    className="text-amber-400"
+                    className="text-blue-400"
                   />
                   <span className="text-white text-sm font-semibold">
                     Consultation Gratuite
@@ -1390,7 +982,7 @@ export default function App() {
                   viewport={{ once: true }}
                 >
                   Prêt à Transformer Votre <br />
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-orange-500">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-500">
                     Projet Minier ?
                   </span>
                 </motion.h2>
@@ -1417,7 +1009,7 @@ export default function App() {
                 >
                   <motion.button
                     onClick={() => scrollToSection("contact")}
-                    className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl shadow-amber-500/50 hover:shadow-amber-500/70"
+                    className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl shadow-blue-500/50 hover:shadow-blue-500/70"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                   >
@@ -1459,24 +1051,22 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contact Sec{
-          if (el) sectionsRef.current.contact = el;
-        }
+      {/* Contact Section */}
       <section
-        ref={(el) => (sectionsRef.current.contact = el)}
+        ref={(el) => { if (el) sectionsRef.current.contact = el; }}
         className="py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
       >
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-10 sm:mb-16">
             <motion.div
-              className="inline-flex items-center gap-2 bg-amber-100 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6"
+              className="inline-flex items-center gap-2 bg-blue-100 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-              <span className="text-amber-700 font-bold text-xs sm:text-sm uppercase tracking-wider">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-wider">
                 Contactez-nous
               </span>
             </motion.div>
@@ -1489,7 +1079,7 @@ export default function App() {
               viewport={{ once: true }}
             >
               Parlons de Votre{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-700">
                 Projet
               </span>
             </motion.h2>
@@ -1712,7 +1302,7 @@ export default function App() {
                   <motion.a
                     key={platform}
                     href="#"
-                    className="w-11 h-11 rounded-xl bg-white/5 hover:bg-gradient-to-br hover:from-amber-500 hover:to-orange-600 flex items-center justify-center text-white transition-all duration-300 border border-white/10"
+                    className="w-11 h-11 rounded-xl bg-white/5 hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 flex items-center justify-center text-white transition-all duration-300 border border-white/10"
                     whileHover={{ scale: 1.1, y: -3 }}
                   >
                     <svg
@@ -1741,7 +1331,7 @@ export default function App() {
             <div>
               <h3 className="text-xl font-bold mb-6 text-white relative inline-block">
                 Services
-                <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full"></div>
+                <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
               </h3>
 
               {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
@@ -1753,11 +1343,11 @@ export default function App() {
                   >
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"
+                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
                     >
                       <ChevronRight
                         size={16}
-                        className="text-amber-500 group-hover:translate-x-1 transition-transform"
+                        className="text-blue-500 group-hover:translate-x-1 transition-transform"
                       />
                       {service.title}
                     </a>
@@ -1769,7 +1359,7 @@ export default function App() {
             <div>
               <h3 className="text-xl font-bold mb-6 text-white relative inline-block">
                 Liens Rapides
-                <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full"></div>
+                <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
               </h3>
 
               {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
@@ -1785,7 +1375,7 @@ export default function App() {
                   <motion.li key={index} whileHover={{ x: 5 }}>
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-2 group"
+                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
                       onClick={(e) => {
                         e.preventDefault();
                         if (sectionsRef.current[item.link]) {
@@ -1795,7 +1385,7 @@ export default function App() {
                     >
                       <ChevronRight
                         size={16}
-                        className="text-amber-500 group-hover:translate-x-1 transition-transform"
+                        className="text-blue-500 group-hover:translate-x-1 transition-transform"
                       />
                       {item.label}
                     </a>
@@ -1807,7 +1397,7 @@ export default function App() {
             <div>
               <h3 className="text-xl font-bold mb-6 text-white relative inline-block">
                 Newsletter
-                <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full"></div>
+                <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
               </h3>
 
               <p className="text-gray-400 mb-6">
@@ -1824,7 +1414,7 @@ export default function App() {
                   />
                   <motion.button
                     type="submit"
-                    className="px-5 py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold rounded-r-2xl hover:from-amber-600 hover:to-orange-700 transition-all duration-300 flex-shrink-0 shadow-lg"
+                    className="px-5 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-r-2xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex-shrink-0 shadow-lg"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -1850,19 +1440,19 @@ export default function App() {
               <div className="flex space-x-6">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-300"
+                  className="text-gray-400 hover:text-blue-400 text-sm transition-colors duration-300"
                 >
                   Politique de confidentialité
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-300"
+                  className="text-gray-400 hover:text-blue-400 text-sm transition-colors duration-300"
                 >
                   Conditions d'utilisation
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-300"
+                  className="text-gray-400 hover:text-blue-400 text-sm transition-colors duration-300"
                 >
                   Mentions légales
                 </a>
