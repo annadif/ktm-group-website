@@ -153,8 +153,8 @@ export default function App() {
         "Identification et évaluation des gisements minéraux avec des technologies de pointe et une expertise géologique approfondie.",
       icon: <Layers size={32} />,
       image: explorationImage,
-      color: "#4B5563",
-      gradient: "from-blue-500 to-blue-600",
+      color: "#1F2937",
+      gradient: "from-gray-800 to-gray-900",
     },
     {
       id: 2,
@@ -163,8 +163,8 @@ export default function App() {
         "Extraction efficace et durable des ressources minérales avec des équipements de dernière génération.",
       icon: <HardHat size={32} />,
       image: exploitationImage,
-      color: "#2563EB",
-      gradient: "from-blue-500 to-indigo-600",
+      color: "#1F2937",
+      gradient: "from-gray-800 to-gray-900",
     },
     {
       id: 3,
@@ -173,8 +173,8 @@ export default function App() {
         "Transformation et valorisation des minerais selon les normes internationales pour obtenir des produits de haute qualité.",
       icon: <Database size={32} />,
       image: traitementImage,
-      color: "#10B981",
-      gradient: "from-emerald-500 to-teal-600",
+      color: "#1F2937",
+      gradient: "from-gray-800 to-gray-900",
     },
     {
       id: 4,
@@ -183,8 +183,8 @@ export default function App() {
         "Distribution et commercialisation des produits miniers sur les marchés locaux et internationaux avec une logistique optimisée.",
       icon: <Globe size={32} />,
       image: commerceImage,
-      color: "#EC4899",
-      gradient: "from-pink-500 to-rose-600",
+      color: "#1F2937",
+      gradient: "from-gray-800 to-gray-900",
     },
     {
       id: 5,
@@ -193,8 +193,8 @@ export default function App() {
         "Services spécialisés pour l'industrie minière, incluant consultation, expertise technique et études de faisabilité.",
       icon: <Wrench size={32} />,
       image: prestationImage,
-      color: "#8B5CF6",
-      gradient: "from-purple-500 to-violet-600",
+      color: "#1F2937",
+      gradient: "from-gray-800 to-gray-900",
     },
     {
       id: 6,
@@ -203,8 +203,8 @@ export default function App() {
         "Solutions logistiques intégrées pour le transport sécurisé des matériaux et équipements miniers.",
       icon: <Truck size={32} />,
       image: transportImage,
-      color: "#F43F5E",
-      gradient: "from-red-500 to-orange-600",
+      color: "#1F2937",
+      gradient: "from-gray-800 to-gray-900",
     },
   ];
 
@@ -427,7 +427,6 @@ export default function App() {
                 "home",
                 "about",
                 "services",
-                "projects",
                 "contact",
               ].map((item) => (
                 <motion.button
@@ -435,8 +434,8 @@ export default function App() {
                   onClick={() => scrollToSection(item)}
                   className={`px-5 py-2.5 font-semibold rounded-xl transition-all duration-300 capitalize relative group ${
                     activeSection === item
-                      ? `text-white bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg shadow-blue-500/30`
-                      : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                      ? `text-white bg-gray-900`
+                      : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -447,13 +446,11 @@ export default function App() {
                       ? "À Propos"
                       : item === "services"
                         ? "Services"
-                        : item === "projects"
-                          ? "Projets"
-                          : "Contact"}
+                        : "Contact"}
                 </motion.button>
               ))}
               <motion.button
-                className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50"
+                className="px-6 py-2.5 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection("contact")}
@@ -493,7 +490,6 @@ export default function App() {
                     "home",
                     "about",
                     "services",
-                    "projects",
                     "contact",
                   ].map((item) => (
                     <motion.button
@@ -501,7 +497,7 @@ export default function App() {
                       onClick={() => scrollToSection(item)}
                       className={`py-3 px-5 font-semibold rounded-xl transition-all duration-200 capitalize text-left ${
                         activeSection === item
-                          ? `text-white bg-gradient-to-r from-blue-500 to-blue-600`
+                          ? `text-white bg-gray-900`
                           : "text-gray-700 hover:bg-gray-100"
                       }`}
                       whileTap={{ scale: 0.97 }}
@@ -512,13 +508,11 @@ export default function App() {
                           ? "À Propos"
                           : item === "services"
                             ? "Services"
-                            : item === "projects"
-                              ? "Projets"
-                              : "Contact"}
+                            : "Contact"}
                     </motion.button>
                   ))}
                   <motion.button
-                    className="mt-2 py-3 px-5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl transition-all duration-200 text-center shadow-lg"
+                    className="mt-2 py-3 px-5 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-all duration-200 text-center"
                     whileTap={{ scale: 0.97 }}
                     onClick={() => scrollToSection("contact")}
                   >
@@ -546,33 +540,30 @@ export default function App() {
         <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
           <div className="max-w-4xl">
             <motion.div
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-600/20 backdrop-blur-sm px-3 sm:px-5 py-1.5 sm:py-2 border border-blue-500/30 mb-6 sm:mb-8"
+              className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-3 sm:px-5 py-1.5 sm:py-2 border border-white/20 mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-              <span className="text-blue-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
+              <div className="w-2 h-2 bg-white rounded-full"></div>
+              <span className="text-white text-xs sm:text-sm font-bold uppercase tracking-wider">
                 Leader de l'Exploitation Minière au Tchad
               </span>
             </motion.div>
 
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black mb-6 sm:mb-8 leading-[0.95]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <span className="block text-white drop-shadow-2xl">
-                L'Avenir de
-              </span>
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 drop-shadow-lg mt-1 sm:mt-2">
-                l'Industrie Minière
+                L'Avenir de l'Industrie Minière
               </span>
             </motion.h1>
 
             <motion.p
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-3xl leading-relaxed font-light"
+              className="text-sm sm:text-base text-gray-300 mb-6 max-w-2xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -580,49 +571,32 @@ export default function App() {
               <span className="font-semibold text-white">
                 KTM GROUP
               </span>{" "}
-              - Excellence, Innovation et Durabilité au service
-              de l'exploitation minière moderne.
+              - Excellence et Durabilité au service de l'exploitation minière.
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 sm:mb-16"
+              className="flex flex-col sm:flex-row gap-3 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <motion.button
                 onClick={() => scrollToSection("services")}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm sm:text-base font-bold rounded-2xl transition-all duration-300 flex items-center justify-center group shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 border border-blue-400/20"
+                className="px-5 py-2.5 bg-white hover:bg-gray-100 text-gray-900 text-sm font-semibold rounded-lg transition-all duration-300 flex items-center justify-center group"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
                 Découvrir nos Services
                 <ArrowRight
-                  size={18}
+                  size={16}
                   className="ml-2 group-hover:translate-x-1 transition-transform"
                 />
-              </motion.button>
-
-              <motion.button
-                onClick={() => setVideoModalOpen(true)}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 text-white text-sm sm:text-base font-bold rounded-2xl border-2 border-white/20 backdrop-blur-xl transition-all duration-300 flex items-center justify-center group"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-blue-500 transition-colors border border-white/30">
-                  <Play
-                    size={14}
-                    className="text-white ml-0.5"
-                    fill="currentColor"
-                  />
-                </div>
-                Voir la Vidéo
               </motion.button>
             </motion.div>
 
             {/* Quick Stats */}
             <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
+              className="grid grid-cols-2 md:grid-cols-4 gap-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
@@ -630,22 +604,16 @@ export default function App() {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  className="bg-white/5 backdrop-blur-xl rounded-lg p-3 border border-white/10 hover:bg-white/10 transition-all duration-300"
                 >
                   <div
-                    className="flex items-center gap-2 mb-2"
-                    style={{ color: stat.color }}
-                  >
-                    {stat.icon}
-                  </div>
-                  <div
-                    className="text-3xl font-black mb-1"
+                    className="text-2xl font-black mb-1"
                     style={{ color: stat.color }}
                   >
                     {stat.value}
                     {stat.suffix}
                   </div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wide">
+                  <div className="text-xs text-gray-400">
                     {stat.label}
                   </div>
                 </div>
@@ -791,32 +759,26 @@ export default function App() {
                 </span>
               </div>
 
-              <h2 className="text-5xl font-black mb-8 text-gray-900 leading-tight">
-                Leader du Secteur <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-700">
-                  Minier au Tchad
-                </span>
+              <h2 className="text-3xl font-black mb-4 text-gray-900 leading-tight">
+                Leader du Secteur Minier au Tchad
               </h2>
 
-              <p className="text-gray-700 mb-8 text-lg leading-relaxed">
-                <strong className="text-blue-600">
+              <p className="text-gray-700 mb-6 text-base leading-relaxed">
+                <strong className="text-gray-900">
                   {companyName}
                 </strong>{" "}
-                est une entreprise pionnière dans le secteur
-                minier au Tchad, spécialisée dans l'exploration,
-                l'exploitation et le traitement des ressources
-                minérales avec excellence et durabilité.
+                est spécialisée dans l'exploration, l'exploitation et le traitement des ressources minérales.
               </p>
 
               <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold rounded-2xl transition-all duration-300 flex items-center shadow-xl group"
-                whileHover={{ scale: 1.05, x: 5 }}
+                className="px-6 py-2.5 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg transition-all duration-300 flex items-center group"
+                whileHover={{ scale: 1.02, x: 5 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => scrollToSection("services")}
               >
                 En Savoir Plus
                 <ChevronRight
-                  size={20}
+                  size={18}
                   className="ml-2 group-hover:translate-x-1 transition-transform"
                 />
               </motion.button>
@@ -830,52 +792,34 @@ export default function App() {
         ref={(el) => {
           if (el) sectionsRef.current.services = el;
         }}
-        className="py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
+        className="py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PHBhdGggZD0iTTM2IDE2YzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnptLTE4IDBjMCAxLjEtLjkgMi0yIDJzLTItLjktMi0yIC45LTIgMi0yIDIgLjkgMiAyem0zNiAwYzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-10 sm:mb-16">
-            <motion.div
-              className="inline-flex items-center gap-2 bg-blue-100 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6"
+          <div className="text-center mb-8">
+            <motion.h2
+              className="text-3xl font-black text-gray-900 mb-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              <span className="text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-wider">
-                Nos Services
-              </span>
-            </motion.div>
-
-            <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6 px-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              Solutions{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-700">
-                360°
-              </span>
+              Nos Services
             </motion.h2>
 
             <motion.p
-              className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base md:text-lg px-4"
+              className="text-gray-600 max-w-2xl mx-auto text-sm"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              De l'exploration à la commercialisation, nous
-              offrons une gamme complète de services miniers
-              professionnels.
+              Solutions complètes pour l'industrie minière
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
@@ -889,8 +833,8 @@ export default function App() {
                 viewport={{ once: true, margin: "-100px" }}
                 whileHover={{ y: -10 }}
               >
-                <div className="bg-white rounded-3xl overflow-hidden shadow-lg shadow-gray-200/50 border border-gray-100 hover:shadow-2xl hover:shadow-gray-300/50 transition-all duration-500 h-full">
-                  <div className="h-56 overflow-hidden relative">
+                <div className="bg-white rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 border border-gray-100 hover:shadow-2xl hover:shadow-gray-300/50 transition-all duration-500 h-full">
+                  <div className="h-40 overflow-hidden relative">
                     <ImageWithFallback
                       src={service.image}
                       alt={service.title}
@@ -915,22 +859,10 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="p-6">
-                    <p className="text-gray-600 leading-relaxed mb-6">
+                  <div className="p-4">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {service.description}
                     </p>
-
-                    <motion.button
-                      className={`flex items-center gap-2 text-sm font-bold group/btn`}
-                      style={{ color: service.color }}
-                      whileHover={{ x: 5 }}
-                    >
-                      En savoir plus
-                      <ArrowRight
-                        size={16}
-                        className="group-hover/btn:translate-x-1 transition-transform"
-                      />
-                    </motion.button>
                   </div>
                 </div>
               </motion.div>
@@ -939,326 +871,127 @@ export default function App() {
         </div>
       </section>
 
-      {/* CTA Section - Modern Gradient */}
-      <section className="py-16 sm:py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6">
-          <motion.div
-            className="relative overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-[3rem] bg-gradient-to-br from-gray-900 via-gray-800 to-black p-6 sm:p-10 md:p-12 lg:p-20"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            {/* Animated Background */}
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDE2YzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnptLTE4IDBjMCAxLjEtLjkgMi0yIDJzLTItLjktMi0yIC45LTIgMi0yIDIgLjkgMiAyem0zNiAwYzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
-
-            {/* Gradient Orbs */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-blue-600/30 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full blur-3xl"></div>
-
-            <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-12">
-              <div className="md:w-2/3">
-                <motion.div
-                  className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xl px-4 py-2 rounded-full mb-6 border border-white/20"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <CheckCircle2
-                    size={16}
-                    className="text-blue-400"
-                  />
-                  <span className="text-white text-sm font-semibold">
-                    Consultation Gratuite
-                  </span>
-                </motion.div>
-
-                <motion.h2
-                  className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  Prêt à Transformer Votre <br />
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-500">
-                    Projet Minier ?
-                  </span>
-                </motion.h2>
-
-                <motion.p
-                  className="text-gray-300 text-lg mb-8 max-w-2xl leading-relaxed"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  Contactez notre équipe d'experts pour discuter
-                  de vos besoins et découvrir comment KTM GROUP
-                  peut vous accompagner de l'exploration à la
-                  commercialisation.
-                </motion.p>
-
-                <motion.div
-                  className="flex flex-col sm:flex-row gap-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <motion.button
-                    onClick={() => scrollToSection("contact")}
-                    className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl shadow-blue-500/50 hover:shadow-blue-500/70"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.97 }}
-                  >
-                    Demander un Devis
-                    <ArrowRight size={20} />
-                  </motion.button>
-
-                  <motion.a
-                    href="tel:+23562415959"
-                    className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-2xl border-2 border-white/20 backdrop-blur-xl transition-all duration-300 flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.97 }}
-                  >
-                    <Phone size={20} />
-                    (+235) 62 41 59 59
-                  </motion.a>
-                </motion.div>
-              </div>
-
-              <div className="md:w-1/3">
-                <motion.div
-                  className="relative rounded-3xl overflow-hidden shadow-2xl"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.7, delay: 0.5 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.03, rotate: 1 }}
-                >
-                  <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1686945127170-ae15deda7bcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBtaW5pbmclMjBlcXVpcG1lbnQlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc2ODM5ODYxMXww&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Mining equipment"
-                    className="w-full h-auto"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section
         ref={(el) => { if (el) sectionsRef.current.contact = el; }}
-        className="py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
+        className="py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
       >
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-10 sm:mb-16">
-            <motion.div
-              className="inline-flex items-center gap-2 bg-blue-100 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6"
+          <div className="text-center mb-8">
+            <motion.h2
+              className="text-3xl font-bold text-gray-900 mb-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              <span className="text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-wider">
-                Contactez-nous
-              </span>
-            </motion.div>
-
-            <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6 px-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              Parlons de Votre{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-700">
-                Projet
-              </span>
+              Contactez-nous
             </motion.h2>
 
             <motion.p
-              className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base md:text-lg px-4"
+              className="text-gray-600 text-sm"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Notre équipe d'experts est prête à vous
-              accompagner dans tous vos projets miniers.
+              Notre équipe est prête à vous accompagner
             </motion.p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12 max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-6 max-w-4xl mx-auto">
             <motion.div
-              className="lg:w-1/2"
+              className="lg:w-1/3 space-y-4"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
-                <div className="p-4 sm:p-6 md:p-8 bg-gradient-to-br from-amber-500 to-orange-600">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2 text-white">
-                    Informations
-                  </h3>
-                  <p className="text-amber-100 text-sm sm:text-base">
-                    Disponibles Lun-Ven: 8h-17h
-                  </p>
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white flex-shrink-0">
+                  <Phone size={18} />
                 </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-sm">Téléphone</h4>
+                  <p className="text-gray-600 text-sm">(+235) 62 41 59 59</p>
+                </div>
+              </div>
 
-                <div className="p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6">
-                  {[
-                    {
-                      icon: <Phone size={20} />,
-                      title: "Téléphone",
-                      content: [
-                        "(+235) 62 41 59 59",
-                        "(+235) 92 92 48 34",
-                      ],
-                      color: "from-blue-500 to-indigo-600",
-                    },
-                    {
-                      icon: <MapPin size={20} />,
-                      title: "Adresse",
-                      content: [
-                        "Boulevard Ngarta Tomballbay",
-                        "N'Djamena, Tchad",
-                      ],
-                      color: "from-emerald-500 to-teal-600",
-                    },
-                    {
-                      icon: <Mail size={20} />,
-                      title: "Email",
-                      content: ["contact@ktmgroup.com"],
-                      color: "from-purple-500 to-violet-600",
-                    },
-                    {
-                      icon: <Clock size={20} />,
-                      title: "Horaires",
-                      content: ["Lundi - Vendredi: 8h - 17h"],
-                      color: "from-amber-500 to-orange-600",
-                    },
-                  ].map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-gray-50 transition-colors duration-300"
-                    >
-                      <div
-                        className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white flex-shrink-0 shadow-lg`}
-                      >
-                        {item.icon}
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-1">
-                          {item.title}
-                        </h4>
-                        {item.content.map((text, i) => (
-                          <p key={i} className="text-gray-600">
-                            {text}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white flex-shrink-0">
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-sm">Email</h4>
+                  <p className="text-gray-600 text-sm">contact@ktmgroup.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white flex-shrink-0">
+                  <MapPin size={18} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-sm">Adresse</h4>
+                  <p className="text-gray-600 text-sm">N'Djamena, Tchad</p>
                 </div>
               </div>
             </motion.div>
 
             <motion.div
-              className="lg:w-1/2"
+              className="lg:w-2/3"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
-                <div className="p-8 bg-gradient-to-br from-gray-900 to-gray-800">
-                  <h3 className="text-3xl font-bold mb-2 text-white">
-                    Message
-                  </h3>
-                  <p className="text-gray-300">
-                    Remplissez le formulaire ci-dessous
-                  </p>
-                </div>
-
-                <form className="p-8 space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-gray-800 font-semibold mb-2"
-                      >
-                        Nom complet
+                      <label htmlFor="name" className="block text-gray-800 font-medium mb-1 text-sm">
+                        Nom
                       </label>
                       <input
                         type="text"
                         id="name"
-                        className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300"
+                        className="w-full px-3 py-2 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                         placeholder="Votre nom"
                       />
                     </div>
 
                     <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-gray-800 font-semibold mb-2"
-                      >
+                      <label htmlFor="email" className="block text-gray-800 font-medium mb-1 text-sm">
                         Email
                       </label>
                       <input
                         type="email"
                         id="email"
-                        className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300"
+                        className="w-full px-3 py-2 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                         placeholder="votre@email.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-gray-800 font-semibold mb-2"
-                    >
-                      Sujet
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Sujet de votre message"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-gray-800 font-semibold mb-2"
-                    >
+                    <label htmlFor="message" className="block text-gray-800 font-medium mb-1 text-sm">
                       Message
                     </label>
                     <textarea
                       id="message"
-                      rows={5}
-                      className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300 resize-none"
-                      placeholder="Parlez-nous de votre projet..."
+                      rows={3}
+                      className="w-full px-3 py-2 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
+                      placeholder="Votre message..."
                     ></textarea>
                   </div>
 
                   <motion.button
                     type="submit"
-                    className="w-full px-6 py-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold rounded-2xl transition-all duration-300 shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.02, y: -2 }}
+                    className="w-full px-5 py-2.5 bg-gray-900 hover:bg-gray-800 text-white text-sm font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Envoyer le Message
+                    Envoyer
                     <ArrowRight size={20} />
                   </motion.button>
                 </form>
