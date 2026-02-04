@@ -421,8 +421,8 @@ export default function App() {
               </motion.div>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-2">
+            {/* Navigation */}
+            <nav className="flex space-x-2 overflow-x-auto">
               {[
                 "home",
                 "about",
@@ -461,7 +461,7 @@ export default function App() {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="md:hidden text-gray-700 focus:outline-none w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-100"
+              className="hidden text-gray-700 focus:outline-none w-10 h-10 items-center justify-center rounded-xl hover:bg-gray-100"
               onClick={toggleMenu}
               whileTap={{ scale: 0.9 }}
             >
@@ -476,7 +476,7 @@ export default function App() {
 
         {/* Mobile Navigation */}
         <AnimatePresence>
-          {isMenuOpen && (
+          {false && isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
@@ -537,22 +537,22 @@ export default function App() {
         {/* Animated Grid Overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDE2YzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnptLTE4IDBjMCAxLjEtLjkgMi0yIDJzLTItLjktMi0yIC45LTIgMi0yIDIgLjkgMiAyem0zNiAwYzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
 
-        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
+        <div className="container mx-auto px-4 py-16 relative z-10">
           <div className="max-w-4xl">
             <motion.div
-              className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-3 sm:px-5 py-1.5 sm:py-2 border border-white/20 mb-6 sm:mb-8"
+              className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 border border-white/20 mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               <div className="w-2 h-2 bg-white rounded-full"></div>
-              <span className="text-white text-xs sm:text-sm font-bold uppercase tracking-wider">
+              <span className="text-white text-xs font-bold uppercase tracking-wider">
                 Leader de l'Exploitation Minière au Tchad
               </span>
             </motion.div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight"
+              className="text-5xl font-black mb-4 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -563,7 +563,7 @@ export default function App() {
             </motion.h1>
 
             <motion.p
-              className="text-sm sm:text-base text-gray-300 mb-6 max-w-2xl leading-relaxed"
+              className="text-sm text-gray-300 mb-6 max-w-2xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -575,7 +575,7 @@ export default function App() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 mb-8"
+              className="flex flex-row gap-3 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -596,7 +596,7 @@ export default function App() {
 
             {/* Quick Stats */}
             <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 gap-2"
+              className="grid grid-cols-4 gap-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
@@ -692,10 +692,10 @@ export default function App() {
         ref={(el) => {
           if (el) sectionsRef.current.about = el;
         }}
-        className="py-16 sm:py-24 md:py-32 bg-white relative overflow-hidden"
+        className="py-16 bg-white relative overflow-hidden"
       >
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
+          <div className="grid grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -819,7 +819,7 @@ export default function App() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
@@ -899,9 +899,9 @@ export default function App() {
             </motion.p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-6 max-w-4xl mx-auto">
+          <div className="flex flex-row gap-6 max-w-4xl mx-auto">
             <motion.div
-              className="lg:w-1/3 space-y-4"
+              className="w-1/3 space-y-4"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
@@ -939,7 +939,7 @@ export default function App() {
             </motion.div>
 
             <motion.div
-              className="lg:w-2/3"
+              className="w-2/3"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
@@ -947,7 +947,7 @@ export default function App() {
             >
               <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
                 <form className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-gray-800 font-medium mb-1 text-sm">
                         Nom
