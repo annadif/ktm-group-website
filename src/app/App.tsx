@@ -585,7 +585,7 @@ export default function App() {
         className="py-16 bg-white relative overflow-hidden"
       >
         <div className="mx-auto max-w-[1280px] px-0 md:px-6 lg:px-[170px] relative z-10">
-          <div className="grid grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -686,7 +686,7 @@ export default function App() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
@@ -766,9 +766,9 @@ export default function App() {
             </motion.p>
           </div>
 
-          <div className="flex flex-row gap-6 max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-6 max-w-4xl mx-auto">
             <motion.div
-              className="w-1/3 space-y-4"
+              className="w-full md:w-1/3 space-y-4"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
@@ -806,7 +806,7 @@ export default function App() {
             </motion.div>
 
             <motion.div
-              className="w-2/3"
+              className="w-full md:w-2/3"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
@@ -814,7 +814,7 @@ export default function App() {
             >
               <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
                 <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-gray-800 font-medium mb-1 text-sm">
                         Nom
