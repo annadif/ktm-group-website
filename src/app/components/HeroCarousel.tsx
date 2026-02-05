@@ -37,7 +37,7 @@ export default function HeroCarousel() {
 
   return (
     <div className="absolute inset-0 z-0 flex items-center justify-center">
-      <div className="relative w-[940px] h-[520px] max-w-full max-h-full px-0 sm:px-6 lg:px-[170px] overflow-hidden">
+      <div className="relative w-[940px] h-[520px] max-w-full max-h-full px-0 md:px-6 lg:px-[170px] overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
