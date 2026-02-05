@@ -525,7 +525,7 @@ export default function App() {
         ref={(el) => {
           if (el) sectionsRef.current.home = el;
         }}
-        className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden h-[520px] md:h-[70vh] flex items-center"
+        className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden h-[520px] flex items-center"
       >
         <HeroCarousel />
       </section>
