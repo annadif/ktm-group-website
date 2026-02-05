@@ -10,10 +10,8 @@ import {
   Wrench,
   Database,
   HardHat,
-  Activity,
   Play,
   ChevronRight,
-  Users,
   Award,
   Shield,
   TrendingUp,
@@ -300,7 +298,6 @@ export default function App() {
       prefix: "",
       suffix: "+",
       color: primaryColor,
-      icon: <Activity size={24} />,
     },
     {
       label: "Projets réalisés",
@@ -308,7 +305,6 @@ export default function App() {
       prefix: "",
       suffix: "+",
       color: accentColor,
-      icon: <Target size={24} />,
     },
     {
       label: "Experts qualifiés",
@@ -316,7 +312,6 @@ export default function App() {
       prefix: "",
       suffix: "+",
       color: "#10B981",
-      icon: <Users size={24} />,
     },
     {
       label: "Pays d'opération",
@@ -324,7 +319,6 @@ export default function App() {
       prefix: "",
       suffix: "",
       color: "#EC4899",
-      icon: <Globe size={24} />,
     },
   ];
 
@@ -367,7 +361,7 @@ export default function App() {
   ];
 
   return (
-    <div className="font-sans bg-white text-gray-800 overflow-hidden">
+    <div className="font-sans bg-white text-gray-800 overflow-hidden text-center md:text-left">
       {/* Fixed Elements */}
       <div className="fixed right-6 bottom-6 z-50 hidden md:flex flex-col gap-4">
         <motion.button
@@ -405,7 +399,7 @@ export default function App() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-[1280px] px-4 lg:px-[170px]">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <motion.div
@@ -416,7 +410,7 @@ export default function App() {
                 <img
                   src={logoImage}
                   alt="KTM GROUP Logo"
-                  className="h-12 sm:h-14 md:h-16 w-auto"
+                  className="h-16 sm:h-20 md:h-24 w-auto"
                 />
               </motion.div>
             </div>
@@ -484,7 +478,7 @@ export default function App() {
               transition={{ duration: 0.3 }}
               className="md:hidden bg-white/95 backdrop-blur-xl shadow-lg overflow-hidden border-t border-gray-200"
             >
-              <div className="container mx-auto px-4 py-4">
+              <div className="mx-auto max-w-[1280px] px-4 lg:px-[170px] py-4">
                 <div className="flex flex-col space-y-2">
                   {[
                     "home",
@@ -525,119 +519,15 @@ export default function App() {
         </AnimatePresence>
       </motion.header>
 
+      <main>
       {/* Hero Section - Ultra Modern */}
       <section
         ref={(el) => {
           if (el) sectionsRef.current.home = el;
         }}
-        className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden h-[60vh] flex items-center"
+        className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden h-[70vh] flex items-center"
       >
         <HeroCarousel />
-
-        {/* Animated Grid Overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDE2YzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnptLTE4IDBjMCAxLjEtLjkgMi0yIDJzLTItLjktMi0yIC45LTIgMi0yIDIgLjkgMiAyem0zNiAwYzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
-
-        <div className="container mx-auto px-4 py-16 relative z-10">
-          <div className="max-w-4xl">
-            <motion.div
-              className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 border border-white/20 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="w-2 h-2 bg-white rounded-full"></div>
-              <span className="text-white text-xs font-bold uppercase tracking-wider">
-                Leader de l'Exploitation Minière au Tchad
-              </span>
-            </motion.div>
-
-            <motion.h1
-              className="text-5xl font-black mb-4 leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <span className="block text-white drop-shadow-2xl">
-                L'Avenir de l'Industrie Minière
-              </span>
-            </motion.h1>
-
-            <motion.p
-              className="text-sm text-gray-300 mb-6 max-w-2xl leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <span className="font-semibold text-white">
-                KTM GROUP
-              </span>{" "}
-              - Excellence et Durabilité au service de l'exploitation minière.
-            </motion.p>
-
-            <motion.div
-              className="flex flex-row gap-3 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <motion.button
-                onClick={() => scrollToSection("services")}
-                className="px-5 py-2.5 bg-white hover:bg-gray-100 text-gray-900 text-sm font-semibold rounded-lg transition-all duration-300 flex items-center justify-center group"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Découvrir nos Services
-                <ArrowRight
-                  size={16}
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
-                />
-              </motion.button>
-            </motion.div>
-
-            {/* Quick Stats */}
-            <motion.div
-              className="grid grid-cols-4 gap-2"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-            >
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-white/5 backdrop-blur-xl rounded-lg p-3 border border-white/10 hover:bg-white/10 transition-all duration-300"
-                >
-                  <div
-                    className="text-2xl font-black mb-1"
-                    style={{ color: stat.color }}
-                  >
-                    {stat.value}
-                    {stat.suffix}
-                  </div>
-                  <div className="text-xs text-gray-400">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{
-            duration: 2,
-            delay: 1,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-center justify-center cursor-pointer backdrop-blur-sm bg-white/5">
-            <div className="w-1 h-3 bg-white rounded-full"></div>
-          </div>
-        </motion.div>
       </section>
 
       {/* Video Modal */}
@@ -694,7 +584,7 @@ export default function App() {
         }}
         className="py-16 bg-white relative overflow-hidden"
       >
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-[170px] relative z-10">
           <div className="grid grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -720,29 +610,6 @@ export default function App() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 </motion.div>
 
-                {/* Floating Badge */}
-                <motion.div
-                  className="absolute -bottom-4 sm:-bottom-8 -right-4 sm:-right-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl shadow-blue-500/50 border-2 sm:border-4 border-white"
-                  whileHover={{ scale: 1.05, rotate: 5 }}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <Award
-                      size={24}
-                      className="text-white sm:w-8 sm:h-8"
-                    />
-                    <div>
-                      <div className="text-white font-black text-base sm:text-xl">
-                        ISO 9001
-                      </div>
-                      <div className="text-blue-100 text-xs sm:text-sm">
-                        Certifié 2015
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
 
@@ -796,7 +663,7 @@ export default function App() {
       >
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PHBhdGggZD0iTTM2IDE2YzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnptLTE4IDBjMCAxLjEtLjkgMi0yIDJzLTItLjktMi0yIC45LTIgMi0yIDIgLjkgMiAyem0zNiAwYzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-[170px] relative z-10">
           <div className="text-center mb-8">
             <motion.h2
               className="text-3xl font-black text-gray-900 mb-3"
@@ -876,7 +743,7 @@ export default function App() {
         ref={(el) => { if (el) sectionsRef.current.contact = el; }}
         className="py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
       >
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-[170px] relative z-10">
           <div className="text-center mb-8">
             <motion.h2
               className="text-3xl font-bold text-gray-900 mb-2"
@@ -1009,14 +876,14 @@ export default function App() {
 
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PHBhdGggZD0iTTM2IDE2YzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnptLTE4IDBjMCAxLjEtLjkgMi0yIDJzLTItLjktMi0yIC45LTIgMi0yIDIgLjkgMiAyem0zNiAwYzAgMS4xLS45IDItMiAycy0yLS45LTItMiAuOS0yIDItMiAyIC45IDIgMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-[170px] relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12 sm:mb-16">
             <div>
               <div className="mb-6 sm:mb-8">
                 <img
                   src={logoImage}
                   alt="KTM GROUP Logo"
-                  className="h-16 sm:h-20 w-auto mb-3 sm:mb-4"
+                  className="h-20 sm:h-24 w-auto mb-3 sm:mb-4"
                 />
                 <p className="text-gray-400 leading-relaxed">
                   Leader dans l'exploration, l'exploitation et
@@ -1194,6 +1061,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+      </main>
     </div>
   );
 }
